@@ -55,11 +55,3 @@ src/
 ## 🤝 Contributing
 
 While this is a personal portfolio project, suggestions and feedback are welcome! Feel free to open an issue or submit a pull request.
-
-## 📝 License
-
-[Choose and add your license]
-
-## 🔗 Contact
-
-[Add your contact information or social media links]
