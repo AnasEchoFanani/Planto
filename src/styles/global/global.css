@@ -2,8 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .nav-link {
-    @apply text-white hover:text-gray-300 transition-colors duration-200;
-  }
+body {
+  @apply bg-gradient-to-b from-black to-green-950 min-h-screen text-white;
+  background-attachment: fixed;
+}
+
+.animate-slide {
+  will-change: transform, opacity;
+}
+
+/* Glass effect */
+.glass {
+  @apply bg-black/30 backdrop-blur-xl border border-white/10;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-black/20;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-green-500/20 rounded-full border border-white/10;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-green-500/30;
 } 
