@@ -1,4 +1,4 @@
-import { useState, useEffect, memo } from 'react'
+import { useState, memo } from 'react'
 import { imageLoader } from '@/utils/image'
 
 interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {

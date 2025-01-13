@@ -4,7 +4,7 @@ import { FaEnvelope } from 'react-icons/fa'
 
 function ForgotPassword() {
   const [email, setEmail] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
+  // const [isLoading, setIsLoading] = useState(false)
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4" data-aos="fade-up">

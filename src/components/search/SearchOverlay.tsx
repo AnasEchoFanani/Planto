@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
 import { FaTimes, FaSearch } from 'react-icons/fa'
-import { useDebounce } from '@/hooks'
 
 interface SearchOverlayProps {
   isOpen: boolean

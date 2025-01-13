@@ -6,61 +6,61 @@ import { useCart } from '@/context/CartContext'
 import { SearchOverlay, MenuOverlay } from '@/components'
 import { useWindowEvent } from '@/hooks/useWindowEvent'
 
-const HeaderContent = memo(function HeaderContent({ 
-  isScrolled, 
-  isVisible, 
-  toggleCart, 
-  itemCount,
-  onSearchClick,
-  onMenuClick 
-}: {
-  isScrolled: boolean
-  isVisible: boolean
-  toggleCart: () => void
-  itemCount: number
-  onSearchClick: () => void
-  onMenuClick: () => void
-}) {
-  return (
-    <nav className="max-w-7xl mx-auto px-4 py-4">
-      <div className="flex items-center justify-between text-white">
-        {/* Logo */}
-        <Link to="/" className="flex-shrink-0">
-          <img src={images.logo} alt="Planta" className="h-8 w-auto" />
-        </Link>
-
-        {/* Navigation */}
-        <div className="hidden md:flex space-x-8">
-          <Link to="/" className="hover:text-green-400 transition-colors">Home</Link>
-          <Link to="/plants" className="hover:text-green-400 transition-colors">Plants</Link>
-          <Link to="/more" className="hover:text-green-400 transition-colors">More</Link>
-          <Link to="/contact" className="hover:text-green-400 transition-colors">Contact</Link>
-        </div>
-
-        {/* Actions */}
-        <div className="flex items-center gap-4">
-          <button onClick={onSearchClick} className="hover:text-green-400 transition-colors">
-            <FaSearch size={20} />
-          </button>
-          <button onClick={toggleCart} className="hover:text-green-400 transition-colors relative">
-            <FaShoppingCart size={20} />
-            {itemCount > 0 && (
-              <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
-                {itemCount}
-              </span>
-            )}
-          </button>
-          <button onClick={onMenuClick} className="md:hidden hover:text-green-400 transition-colors">
-            <span className="sr-only">Menu</span>
-            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </nav>
-  )
-})
+// const HeaderContent = memo(function HeaderContent({ 
+//   isScrolled, 
+//   isVisible, 
+//   toggleCart, 
+//   itemCount,
+//   onSearchClick,
+//   onMenuClick 
+// }: {
+//   isScrolled: boolean
+//   isVisible: boolean
+//   toggleCart: () => void
+//   itemCount: number
+//   onSearchClick: () => void
+//   onMenuClick: () => void
+// }) {
+//   return (
+//     <nav className="max-w-7xl mx-auto px-4 py-4">
+//       <div className="flex items-center justify-between text-white">
+//         {/* Logo */}
+//         <Link to="/" className="flex-shrink-0">
+//           <img src={images.logo} alt="Planta" className="h-8 w-auto" />
+//         </Link>
+//
+//         {/* Navigation */}
+//         <div className="hidden md:flex space-x-8">
+//           <Link to="/" className="hover:text-green-400 transition-colors">Home</Link>
+//           <Link to="/plants" className="hover:text-green-400 transition-colors">Plants</Link>
+//           <Link to="/more" className="hover:text-green-400 transition-colors">More</Link>
+//           <Link to="/contact" className="hover:text-green-400 transition-colors">Contact</Link>
+//         </div>
+//
+//         {/* Actions */}
+//         <div className="flex items-center gap-4">
+//           <button onClick={onSearchClick} className="hover:text-green-400 transition-colors">
+//             <FaSearch size={20} />
+//           </button>
+//           <button onClick={toggleCart} className="hover:text-green-400 transition-colors relative">
+//             <FaShoppingCart size={20} />
+//             {itemCount > 0 && (
+//               <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+//                 {itemCount}
+//               </span>
+//             )}
+//           </button>
+//           <button onClick={onMenuClick} className="md:hidden hover:text-green-400 transition-colors">
+//             <span className="sr-only">Menu</span>
+//             <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+//             </svg>
+//           </button>
+//         </div>
+//       </div>
+//     </nav>
+//   )
+// })
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
