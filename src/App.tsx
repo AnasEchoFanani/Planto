@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { Layout, LoadingOverlay, CursorFollower } from "@/components";
+import { lazy, Suspense } from 'react';
+const Layout = lazy(() => import('@/components/layout/Layout'));
+const LoadingOverlay = lazy(() => import('@/components/LoadingOverlay'));
+const CursorFollower = lazy(() => import('@/components/CursorFollower'));
+const CartSidebar = lazy(() => import('@/components/cart/CartSidebar'));
 import { routes } from "@/config/routes";
 import { CartProvider } from "@/context/CartContext";
 import { AnimatePresence } from "framer-motion";
-import CartSidebar from "@/components/cart/CartSidebar";
 
 function AppRoutes() {
   const location = useLocation();
@@ -56,15 +59,17 @@ function App() {
   return (
     <BrowserRouter>
       <CartProvider>
-        {width > 768 && <CursorFollower />}
-        {isLoading ? (
-          <LoadingOverlay isLoading={true} />
-        ) : (
-          <>
-            <AppRoutes />
-            <CartSidebar />
-          </>
-        )}
+        <Suspense fallback={<div>Loading...</div>}>
+          {width > 768 && <CursorFollower />}
+          {isLoading ? (
+            <LoadingOverlay isLoading={true} />
+          ) : (
+            <>
+              <AppRoutes />
+              <CartSidebar />
+            </>
+          )}
+        </Suspense>
       </CartProvider>
     </BrowserRouter>
   );

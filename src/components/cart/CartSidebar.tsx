@@ -75,7 +75,7 @@ const CartItem = memo(function CartItem({
   );
 });
 
-function CartSidebar() {
+const CartSidebar = memo(function CartSidebar() {
   const { isOpen, closeCart, items, removeItem, updateQuantity, total } = useCart();
 
   const handleUpdateQuantity = useCallback((id: number, quantity: number) => {
@@ -201,6 +201,6 @@ function CartSidebar() {
       )}
     </AnimatePresence>
   );
-}
+});
 
-export default memo(CartSidebar);
+export default CartSidebar;
