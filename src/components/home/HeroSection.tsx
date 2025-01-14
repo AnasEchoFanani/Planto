@@ -8,7 +8,7 @@ function HeroSection() {
     <section className="min-h-screen flex items-center px-4 py-20">
       <div className="max-w-7xl mx-auto w-full">
         <div className="max-w-3xl">
-          <ScrollAnimation animation="slide-right" className="flex-1 max-w-2xl">
+          <ScrollAnimation animation="slide-right" className="flex-1 max-w-2xl" duration={2.5}>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
               <span className="text-white">Discover the</span>
               <br />

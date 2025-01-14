@@ -1,11 +1,12 @@
 import OptimizedImage from 'react-optimized-image';
+import { motion } from 'framer-motion';
 
 function CustomerReviews() {
   return (
     <section className="px-4 py-12">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold mb-8">Customer Review</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6" layout transition={{ duration: 0.2 }}>
           {[1, 2, 3].map((item) => (
             <div
               key={item}
@@ -32,7 +33,7 @@ function CustomerReviews() {
               </p>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

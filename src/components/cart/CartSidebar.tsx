@@ -33,9 +33,9 @@ const CartItem = memo(function CartItem({
   }, [item.quantity, onUpdateQuantity]);
 
   return (
-    <div className="flex gap-4 bg-black/20 rounded-2xl p-4 border border-white/5">
+    <motion.div className="flex gap-4 bg-black/20 rounded-2xl p-4 border border-white/5" layout transition={{ duration: 0.2 }}>
       <OptimizedImage
-        src={require(`../../public/images/${item.image}`)}
+        src={{ src: item.image, width: 96, height: 96, format: 'jpg' }}
         alt={item.name}
         className="w-24 h-24 object-cover"
         loading="lazy"
@@ -69,7 +69,7 @@ const CartItem = memo(function CartItem({
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 });
 
