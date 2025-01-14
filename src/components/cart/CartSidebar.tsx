@@ -1,7 +1,7 @@
 import { useCart } from "@/context/CartContext";
 import { FaTimes, FaMinus, FaPlus } from "react-icons/fa";
 import { memo, useCallback, useMemo } from "react";
-import { Image } from "@/components";
+import OptimizedImage from 'react-optimized-image'; 
 import { AnimatePresence, motion } from "framer-motion";
 import './CartSidebar.css';
 
@@ -34,11 +34,9 @@ const CartItem = memo(function CartItem({
 
   return (
     <div className="flex gap-4 bg-black/20 rounded-2xl p-4 border border-white/5">
-      <Image
-        src={item.image}
+      <OptimizedImage
+        src={require(`../../public/images/${item.image}`)}
         alt={item.name}
-        width={96}
-        height={96}
         className="w-24 h-24 object-cover"
         loading="lazy"
       />

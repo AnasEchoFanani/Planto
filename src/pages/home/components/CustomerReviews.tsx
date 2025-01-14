@@ -1,3 +1,5 @@
+import OptimizedImage from 'react-optimized-image';
+
 function CustomerReviews() {
   return (
     <section className="px-4 py-12">
@@ -10,10 +12,11 @@ function CustomerReviews() {
               className="bg-black/20 backdrop-blur-sm rounded-3xl p-6"
             >
               <div className="flex items-center gap-4 mb-4">
-                <img
-                  src={`/avatar${item}.jpg`}
+                <OptimizedImage
+                  src={require(`../../public/images/avatar${item}.jpg`)}
                   alt="Avatar"
                   className="w-12 h-12 rounded-full"
+                  loading="lazy"
                 />
                 <div>
                   <h3 className="font-semibold">Customer Name</h3>
