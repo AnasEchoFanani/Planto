@@ -18,6 +18,7 @@ interface CartContextType {
   items: CartItem[];
   isOpen: boolean;
   toggleCart: () => void;
+  closeCart: () => void;
   addItem: (item: Omit<CartItem, "quantity">) => void;
   removeItem: (id: number) => void;
   updateQuantity: (id: number, quantity: number) => void;
@@ -41,7 +42,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
     localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
   }, [items]);
 
-  const toggleCart = () => setIsOpen(!isOpen);
+  const toggleCart = () => setIsOpen((prev) => !prev);
+  const closeCart = () => setIsOpen(false);
 
   const addItem = (item: Omit<CartItem, "quantity">) => {
     setItems((current) => {
@@ -83,6 +85,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         items,
         isOpen,
         toggleCart,
+        closeCart,
         addItem,
         removeItem,
         updateQuantity,

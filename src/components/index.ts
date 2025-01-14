@@ -1,6 +1,8 @@
 // Common
 export { default as Button } from "./common/Button/Button";
 export { default as LoadingSpinner } from "./common/LoadingSpinner";
+export { default as LoadingOverlay } from './LoadingOverlay';
+export { default as CursorFollower } from './CursorFollower';
 export { Image } from "./common/Image";
 export { AddToCart } from "./common/AddToCart";
 
@@ -21,3 +23,7 @@ export { default as CartSidebar } from "./cart/CartSidebar";
 // Overlays
 export { default as SearchOverlay } from "./search/SearchOverlay";
 export { default as MenuOverlay } from "./menu/MenuOverlay";
+
+export * from './AnimationWrapper';
+export * from './ScrollAnimation';
+export * from './HoverAnimation';

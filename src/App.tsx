@@ -1,50 +1,65 @@
-import { Suspense, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Layout, LoadingSpinner } from "@/components";
+import { Suspense, useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Layout, LoadingOverlay, CursorFollower } from "@/components";
 import { routes } from "@/config/routes";
 import { CartProvider } from "@/context/CartContext";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { AnimatePresence } from "framer-motion";
 import CartSidebar from "@/components/cart/CartSidebar";
 
+function AppRoutes() {
+  const location = useLocation();
+  
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Layout />}>
+          {routes.map(({ path, element: Element }) => (
+            <Route
+              key={path}
+              path={path}
+              element={<Element />}
+            />
+          ))}
+        </Route>
+      </Routes>
+    </AnimatePresence>
+  );
+}
+
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
-    // Initialize AOS with performance optimized settings
-    AOS.init({
-      duration: 800,
-      once: true,
-      offset: 50,
-      easing: "ease-out-cubic",
-      mirror: false,
-      disable: window.innerWidth < 768, // Disable on mobile for better performance
-    });
+    const handleLoad = () => {
+      setIsLoading(true);
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 2000);
+      return () => clearTimeout(timer);
+    };
+
+    // Initial load
+    handleLoad();
+
+    // Add refresh event listener
+    window.addEventListener('beforeunload', handleLoad);
+    return () => window.removeEventListener('beforeunload', handleLoad);
   }, []);
 
   return (
-    <CartProvider>
-      <BrowserRouter>
-        <Suspense fallback={<LoadingSpinner />}>
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              {routes.map(({ path, element: Element }) => (
-                <Route
-                  key={path}
-                  path={path}
-                  element={
-                    <Suspense fallback={<LoadingSpinner />}>
-                      <div data-aos="fade-up">
-                        <Element />
-                      </div>
-                    </Suspense>
-                  }
-                />
-              ))}
-            </Route>
-          </Routes>
-          <CartSidebar />
-        </Suspense>
-      </BrowserRouter>
-    </CartProvider>
+    <BrowserRouter>
+      <CartProvider>
+        <CursorFollower />
+        {isLoading ? (
+          <LoadingOverlay isLoading={true} />
+        ) : (
+          <>
+            <AppRoutes />
+            <CartSidebar />
+          </>
+        )}
+      </CartProvider>
+    </BrowserRouter>
   );
 }
 

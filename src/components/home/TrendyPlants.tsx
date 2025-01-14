@@ -1,5 +1,8 @@
 import { images } from "@/assets/images";
 import { AddToCart } from "@/components";
+import { ScrollAnimation } from '../ScrollAnimation';
+import { HoverAnimation } from '../HoverAnimation';
+import { motion } from 'framer-motion';
 
 const trendyProducts = [
   {
@@ -9,6 +12,7 @@ const trendyProducts = [
       "The Instagram-famous Swiss Cheese Plant. Its dramatic split leaves create a bold tropical statement in any modern space.",
     price: 79.99,
     image: images.plants.plant2,
+    category: "Indoor Plant"
   },
   {
     id: 8,
@@ -17,6 +21,7 @@ const trendyProducts = [
       "The ultimate statement plant with large, violin-shaped leaves. This trendy beauty adds instant sophistication to any room.",
     price: 89.99,
     image: images.plants.plant3,
+    category: "Indoor Plant"
   },
 ];
 
@@ -24,71 +29,90 @@ function TrendyPlants() {
   return (
     <section className="px-4 py-12 md:py-24 relative">
       <div className="max-w-7xl mx-auto">
-        <h2
-          className="text-3xl md:text-4xl font-bold mb-8 md:mb-16 text-center"
-          data-aos="fade-up"
-        >
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300 via-green-200 to-green-300">
-            Trending This Season
-          </span>
-        </h2>
+        <ScrollAnimation animation="slide-up">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-16 text-center">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300 via-green-200 to-green-300">
+              Trending This Season
+            </span>
+          </h2>
+        </ScrollAnimation>
 
-        <p
-          className="text-center text-gray-400 max-w-2xl mx-auto mb-12"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          Discover this season's most sought-after plants. These stunning
-          varieties are carefully chosen to help you create an Instagram-worthy
-          urban jungle.
-        </p>
+        <ScrollAnimation animation="slide-up" delay={0.1}>
+          <p className="text-center text-gray-400 max-w-2xl mx-auto mb-12">
+            Discover this season's most sought-after plants. These stunning
+            varieties are carefully chosen to help you create an Instagram-worthy
+            urban jungle.
+          </p>
+        </ScrollAnimation>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {trendyProducts.map((product, index) => (
-            <div
-              key={product.id}
-              className="bg-black/30 backdrop-blur-xl rounded-[2rem] p-8 border border-white/10 relative overflow-visible group"
-              data-aos={index === 0 ? "fade-right" : "fade-left"}
+            <ScrollAnimation 
+              key={product.id} 
+              animation="scale" 
+              delay={index * 0.1}
             >
-              {/* Glass effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/0 pointer-events-none rounded-[2rem]" />
-
-              <div className="flex justify-between items-start relative">
-                <div className="flex flex-col gap-4 relative z-20">
-                  <h3 className="text-2xl font-semibold text-white">
-                    {product.name}
-                  </h3>
-                  <p className="text-gray-400 text-sm max-w-xs leading-relaxed">
-                    {product.description}
-                  </p>
-                  <p className="text-2xl font-semibold text-white">
-                    ${product.price.toFixed(2)}
-                  </p>
-                  <div className="flex gap-3">
-                    <button className="bg-green-600/20 backdrop-blur-sm border border-green-500/30 hover:bg-green-500/30 px-6 py-2 rounded-full text-white transition-colors">
-                      Buy Now
-                    </button>
-                    <AddToCart product={product} />
-                  </div>
-                </div>
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-radial from-green-500/10 to-transparent rounded-full blur-2xl transform scale-150" />
-                  <div className="relative -mt-20 h-72 flex items-center justify-center">
-                    <img
+              <div className="relative mt-24">
+                {/* 3D Floating Image */}
+                <motion.div
+                  initial={{ y: 0 }}
+                  animate={{ y: [-10, 10, -10] }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="absolute -top-32 left-1/2 -translate-x-1/2 w-64 h-64 pointer-events-none z-20"
+                >
+                  <div className="relative w-full h-full">
+                    {/* Shadow */}
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-8 bg-black/20 rounded-full blur-xl transform scale-x-150" />
+                    
+                    <motion.img
                       src={product.image}
                       alt={product.name}
-                      className="w-64 h-64 object-contain 
-                        transform -translate-y-12 
-                        group-hover:scale-125 group-hover:-translate-y-16 
-                        transition-all duration-300 ease-out
-                        drop-shadow-[0_20px_50px_rgba(0,200,0,0.2)]
-                        group-hover:drop-shadow-[0_30px_70px_rgba(0,200,0,0.3)]
-                        z-0"
+                      className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(0,200,0,0.3)] pointer-events-auto cursor-pointer"
+                      whileHover={{ 
+                        scale: 1.1,
+                        rotateY: 10,
+                        rotateX: -10,
+                        transition: { duration: 0.4 }
+                      }}
                     />
                   </div>
-                </div>
+                </motion.div>
+
+                {/* Card Content */}
+                <HoverAnimation 
+                  animation="tilt"
+                  className="bg-black/30 backdrop-blur-xl rounded-[2rem] p-8 pt-32 border border-white/10 relative overflow-visible group z-10"
+                >
+                  {/* Glass effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/0 pointer-events-none rounded-[2rem]" />
+
+                  <div className="relative z-10">
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <h3 className="text-xl font-medium text-white mb-1">
+                            {product.name}
+                          </h3>
+                          <p className="text-gray-400">{product.description}</p>
+                        </div>
+                        <div className="text-right">
+                          <div className="text-green-400 text-xl font-medium">
+                            ${product.price.toFixed(2)}
+                          </div>
+                          <HoverAnimation animation="bounce">
+                            <AddToCart product={product} />
+                          </HoverAnimation>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </HoverAnimation>
               </div>
-            </div>
+            </ScrollAnimation>
           ))}
         </div>
       </div>

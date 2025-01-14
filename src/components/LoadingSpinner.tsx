@@ -1,4 +1,3 @@
-import { memo } from "react";
 import { motion } from 'framer-motion';
 
 interface LoadingSpinnerProps {
@@ -7,7 +6,7 @@ interface LoadingSpinnerProps {
   type?: 'leaf' | 'dots' | 'pulse';
 }
 
-function LoadingSpinner({ 
+export function LoadingSpinner({ 
   size = 40, 
   color = '#22c55e',
   type = 'leaf' 
@@ -114,4 +113,4 @@ function LoadingSpinner({
   );
 }
 
-export default memo(LoadingSpinner);
+export default LoadingSpinner;
