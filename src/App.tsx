@@ -8,6 +8,7 @@ const CartSidebar = lazy(() => import('@/components/cart/CartSidebar'));
 import { routes } from "@/config/routes";
 import { CartProvider } from "@/context/CartContext";
 import { AnimatePresence } from "framer-motion";
+import { LinkedInPopup } from './components/common/LinkedInPopup';
 
 function AppRoutes() {
   const location = useLocation();
@@ -60,6 +61,7 @@ function App() {
     <BrowserRouter>
       <CartProvider>
         <Suspense fallback={<div>Loading...</div>}>
+          <LinkedInPopup />
           {width > 768 && <CursorFollower />}
           {isLoading ? (
             <LoadingOverlay isLoading={true} />
