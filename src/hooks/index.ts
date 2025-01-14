@@ -1,3 +1,4 @@
-export { useAuth } from './useAuth'
-export { useDebounce } from './useDebounce'
-// ... export other hooks 
+export { useAuth } from './useAuth';
+export { useDebounce } from './useDebounce';
+export { useIntersectionObserver } from './useIntersectionObserver';
+export { useWindowEvent } from './useWindowEvent';

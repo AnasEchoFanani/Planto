@@ -1,20 +1,20 @@
 // Plants
-import plant1 from './plants/plant1.png'
-import plant2 from './plants/plant2.png'
-import plant3 from './plants/plant3.png'
-import plant4 from './plants/plant4.png'
-import plant5 from './plants/plant5.png'
-import plant6 from './plants/plant6.png'
-import plantHero from './plants/plant-hero.png'
-import background from './backround/backround.png'
+import plant1 from "./plants/plant1.png";
+import plant2 from "./plants/plant2.png";
+import plant3 from "./plants/plant3.png";
+import plant4 from "./plants/plant4.png";
+import plant5 from "./plants/plant5.png";
+import plant6 from "./plants/plant6.png";
+import plantHero from "./plants/plant-hero.png";
+import background from "./backround/backround.png";
 
 // Logo
-import logo from './logo/logo.svg'
+import logo from "./logo/logo.svg";
 
 // Avatars
-import avatar1 from './avatars/avatar1.png'
-import avatar2 from './avatars/avatar2.png'
-import avatar3 from './avatars/avatar3.png'
+import avatar1 from "./avatars/avatar1.png";
+import avatar2 from "./avatars/avatar2.png";
+import avatar3 from "./avatars/avatar3.png";
 
 export const images = {
   plants: {
@@ -33,6 +33,6 @@ export const images = {
   },
   background,
   logo,
-} as const
+} as const;
 
-export default images 
+export default images;

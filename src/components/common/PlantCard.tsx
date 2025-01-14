@@ -1,8 +1,8 @@
 interface PlantCardProps {
-  title: string
-  description?: string
-  price: number
-  image: string
+  title: string;
+  description?: string;
+  price: number;
+  image: string;
 }
 
 function PlantCard({ title, description, price, image }: PlantCardProps) {
@@ -22,7 +22,7 @@ function PlantCard({ title, description, price, image }: PlantCardProps) {
         <img src={image} alt={title} className="w-32 h-32 object-cover" />
       </div>
     </div>
-  )
+  );
 }
 
-export default PlantCard 
+export default PlantCard;

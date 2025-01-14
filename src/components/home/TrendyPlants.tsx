@@ -1,28 +1,30 @@
-import { images } from '@/assets/images'
-import { AddToCart } from '@/components'
+import { images } from "@/assets/images";
+import { AddToCart } from "@/components";
 
 const trendyProducts = [
   {
     id: 7,
     name: "Monstera Deliciosa",
-    description: "The Instagram-famous Swiss Cheese Plant. Its dramatic split leaves create a bold tropical statement in any modern space.",
+    description:
+      "The Instagram-famous Swiss Cheese Plant. Its dramatic split leaves create a bold tropical statement in any modern space.",
     price: 79.99,
-    image: images.plants.plant2
+    image: images.plants.plant2,
   },
   {
     id: 8,
     name: "Fiddle Leaf Fig",
-    description: "The ultimate statement plant with large, violin-shaped leaves. This trendy beauty adds instant sophistication to any room.",
+    description:
+      "The ultimate statement plant with large, violin-shaped leaves. This trendy beauty adds instant sophistication to any room.",
     price: 89.99,
-    image: images.plants.plant3
-  }
-]
+    image: images.plants.plant3,
+  },
+];
 
 function TrendyPlants() {
   return (
     <section className="px-4 py-12 md:py-24 relative">
       <div className="max-w-7xl mx-auto">
-        <h2 
+        <h2
           className="text-3xl md:text-4xl font-bold mb-8 md:mb-16 text-center"
           data-aos="fade-up"
         >
@@ -30,22 +32,27 @@ function TrendyPlants() {
             Trending This Season
           </span>
         </h2>
-        
-        <p className="text-center text-gray-400 max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
-          Discover this season's most sought-after plants. These stunning varieties are 
-          carefully chosen to help you create an Instagram-worthy urban jungle.
+
+        <p
+          className="text-center text-gray-400 max-w-2xl mx-auto mb-12"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Discover this season's most sought-after plants. These stunning
+          varieties are carefully chosen to help you create an Instagram-worthy
+          urban jungle.
         </p>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {trendyProducts.map((product, index) => (
-            <div 
+            <div
               key={product.id}
               className="bg-black/30 backdrop-blur-xl rounded-[2rem] p-8 border border-white/10 relative overflow-visible group"
               data-aos={index === 0 ? "fade-right" : "fade-left"}
             >
               {/* Glass effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/0 pointer-events-none rounded-[2rem]" />
-              
+
               <div className="flex justify-between items-start relative">
                 <div className="flex flex-col gap-4 relative z-20">
                   <h3 className="text-2xl font-semibold text-white">
@@ -67,8 +74,8 @@ function TrendyPlants() {
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-radial from-green-500/10 to-transparent rounded-full blur-2xl transform scale-150" />
                   <div className="relative -mt-20 h-72 flex items-center justify-center">
-                    <img 
-                      src={product.image} 
+                    <img
+                      src={product.image}
                       alt={product.name}
                       className="w-64 h-64 object-contain 
                         transform -translate-y-12 
@@ -86,7 +93,7 @@ function TrendyPlants() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default TrendyPlants 
+export default TrendyPlants;

@@ -1,19 +1,22 @@
-import { memo } from 'react'
-import { useCart } from '@/context/CartContext'
-import { FaPlus } from 'react-icons/fa'
+import { memo } from "react";
+import { useCart } from "@/context/CartContext";
+import { FaPlus } from "react-icons/fa";
 
 interface AddToCartProps {
   product: {
-    id: number
-    name: string
-    price: number
-    image: string
-  }
-  className?: string
+    id: number;
+    name: string;
+    price: number;
+    image: string;
+  };
+  className?: string;
 }
 
-export const AddToCart = memo(function AddToCart({ product, className = '' }: AddToCartProps) {
-  const { addItem } = useCart()
+export const AddToCart = memo(function AddToCart({
+  product,
+  className = "",
+}: AddToCartProps) {
+  const { addItem } = useCart();
 
   return (
     <button
@@ -25,5 +28,5 @@ export const AddToCart = memo(function AddToCart({ product, className = '' }: Ad
     >
       <FaPlus size={16} />
     </button>
-  )
-}) 
+  );
+});

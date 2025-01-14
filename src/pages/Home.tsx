@@ -1,4 +1,4 @@
-import { HeroSection, TopSelling, TrendyPlants } from '@/components'
+import { HeroSection, TopSelling, TrendyPlants } from "@/components";
 
 function Home() {
   return (
@@ -7,7 +7,7 @@ function Home() {
       <TopSelling />
       <TrendyPlants />
     </>
-  )
+  );
 }
 
-export default Home 
+export default Home;

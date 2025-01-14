@@ -1,23 +1,24 @@
-import { Suspense, useEffect } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Layout, LoadingSpinner, CartSidebar } from '@/components'
-import { routes } from '@/config/routes'
-import { CartProvider } from '@/context/CartContext'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+import { Suspense, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Layout, LoadingSpinner } from "@/components";
+import { routes } from "@/config/routes";
+import { CartProvider } from "@/context/CartContext";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import CartSidebar from "@/components/cart/CartSidebar";
 
 function App() {
   useEffect(() => {
+    // Initialize AOS with performance optimized settings
     AOS.init({
       duration: 800,
       once: true,
       offset: 50,
-      delay: 50,
-      easing: 'ease-out-cubic',
+      easing: "ease-out-cubic",
       mirror: false,
-      anchorPlacement: 'top-bottom'
-    })
-  }, [])
+      disable: window.innerWidth < 768, // Disable on mobile for better performance
+    });
+  }, []);
 
   return (
     <CartProvider>
@@ -30,19 +31,21 @@ function App() {
                   key={path}
                   path={path}
                   element={
-                    <div data-aos="fade-up">
-                      <Element />
-                    </div>
+                    <Suspense fallback={<LoadingSpinner />}>
+                      <div data-aos="fade-up">
+                        <Element />
+                      </div>
+                    </Suspense>
                   }
                 />
               ))}
             </Route>
           </Routes>
+          <CartSidebar />
         </Suspense>
-        <CartSidebar />
       </BrowserRouter>
     </CartProvider>
-  )
+  );
 }
 
-export default App
+export default App;

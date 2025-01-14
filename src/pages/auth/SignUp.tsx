@@ -1,36 +1,41 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { FaUser, FaEnvelope, FaLock } from 'react-icons/fa'
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
 
 function SignUp() {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState('')
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setError('')
-    setIsLoading(true)
-    
+    e.preventDefault();
+    setError("");
+    setIsLoading(true);
+
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      console.log('Signing up with:', { name, email, password })
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      console.log("Signing up with:", { name, email, password });
     } catch (err) {
-      setError('An error occurred during registration. Please try again.')
+      setError("An error occurred during registration. Please try again.");
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4" data-aos="fade-up">
+    <div
+      className="min-h-screen flex items-center justify-center px-4"
+      data-aos="fade-up"
+    >
       <div className="max-w-md w-full space-y-8 glass p-8 rounded-[2rem]">
         <div>
-          <h2 className="text-3xl font-bold text-center text-white">Create Your Garden</h2>
+          <h2 className="text-3xl font-bold text-center text-white">
+            Create Your Garden
+          </h2>
           <p className="mt-2 text-center text-gray-400">
-            Join Planto and start your journey to a greener life.{' '}
+            Join Planto and start your journey to a greener life.{" "}
             <Link to="/signin" className="text-green-400 hover:text-green-300">
               Already have an account?
             </Link>
@@ -46,7 +51,9 @@ function SignUp() {
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="space-y-4">
             <div>
-              <label htmlFor="name" className="sr-only">Full Name</label>
+              <label htmlFor="name" className="sr-only">
+                Full Name
+              </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
                   <FaUser />
@@ -67,7 +74,9 @@ function SignUp() {
               </div>
             </div>
             <div>
-              <label htmlFor="email" className="sr-only">Email address</label>
+              <label htmlFor="email" className="sr-only">
+                Email address
+              </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
                   <FaEnvelope />
@@ -89,7 +98,9 @@ function SignUp() {
               </div>
             </div>
             <div>
-              <label htmlFor="password" className="sr-only">Password</label>
+              <label htmlFor="password" className="sr-only">
+                Password
+              </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
                   <FaLock />
@@ -121,20 +132,24 @@ function SignUp() {
                 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500
                 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isLoading ? 'Creating Account...' : 'Create Account'}
+              {isLoading ? "Creating Account..." : "Create Account"}
             </button>
           </div>
 
           <p className="text-center text-sm text-gray-400">
-            By signing up, you agree to our{' '}
-            <Link to="/terms" className="text-green-400 hover:text-green-300">Terms of Service</Link>
-            {' '}and{' '}
-            <Link to="/privacy" className="text-green-400 hover:text-green-300">Privacy Policy</Link>
+            By signing up, you agree to our{" "}
+            <Link to="/terms" className="text-green-400 hover:text-green-300">
+              Terms of Service
+            </Link>{" "}
+            and{" "}
+            <Link to="/privacy" className="text-green-400 hover:text-green-300">
+              Privacy Policy
+            </Link>
           </p>
         </form>
       </div>
     </div>
-  )
+  );
 }
 
-export default SignUp 
+export default SignUp;

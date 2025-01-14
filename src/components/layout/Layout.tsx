@@ -1,23 +1,23 @@
-import { Outlet } from 'react-router-dom'
-import { Header, Footer } from '@/components'
-import { images } from '@/assets/images'
-import { memo } from 'react'
+import { Outlet } from "react-router-dom";
+import { Header, Footer } from "@/components";
+import { images } from "@/assets/images";
+import { memo } from "react";
 
 const Background = memo(() => (
   <>
-    <div 
+    <div
       className="fixed inset-0 bg-cover bg-center bg-no-repeat"
-      style={{ 
+      style={{
         backgroundImage: `url(${images.background})`,
-        zIndex: -2 
+        zIndex: -2,
       }}
     />
-    <div 
+    <div
       className="fixed inset-0 bg-gradient-to-b from-black/80 to-black/95"
       style={{ zIndex: -1 }}
     />
   </>
-))
+));
 
 function Layout() {
   return (
@@ -31,7 +31,7 @@ function Layout() {
         <Footer />
       </div>
     </div>
-  )
+  );
 }
 
-export default Layout 
+export default Layout;

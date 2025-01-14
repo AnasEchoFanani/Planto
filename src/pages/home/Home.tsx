@@ -1,4 +1,9 @@
-import { HeroSection, TrendyPlants, TopSelling, CustomerReviews } from '@/components'
+import {
+  HeroSection,
+  TrendyPlants,
+  TopSelling,
+  CustomerReviews,
+} from "@/components";
 
 function Home() {
   return (
@@ -8,7 +13,7 @@ function Home() {
       <TopSelling />
       <CustomerReviews />
     </div>
-  )
+  );
 }
 
-export default Home 
+export default Home;

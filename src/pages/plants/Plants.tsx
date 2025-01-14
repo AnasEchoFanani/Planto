@@ -6,7 +6,7 @@ function Plants() {
         {/* Plant cards will go here */}
       </div>
     </div>
-  )
+  );
 }
 
-export default Plants 
+export default Plants;

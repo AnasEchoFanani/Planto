@@ -1,53 +1,53 @@
-import { lazy } from 'react'
+import { lazy } from "react";
 
 // Lazy load pages
-const Home = lazy(() => import('@/pages/Home'))
-const About = lazy(() => import('@/pages/About'))
-const SignIn = lazy(() => import('@/pages/auth/SignIn'))
-const SignUp = lazy(() => import('@/pages/auth/SignUp'))
-const More = lazy(() => import('@/pages/More'))
-const Plants = lazy(() => import('@/pages/Plants'))
-const Privacy = lazy(() => import('@/pages/legal/Privacy'))
-const Terms = lazy(() => import('@/pages/legal/Terms'))
-const NotFound = lazy(() => import('@/pages/NotFound'))
+const Home = lazy(() => import("@/pages/Home"));
+const About = lazy(() => import("@/pages/About"));
+const SignIn = lazy(() => import("@/pages/auth/SignIn"));
+const SignUp = lazy(() => import("@/pages/auth/SignUp"));
+const More = lazy(() => import("@/pages/More"));
+const Plants = lazy(() => import("@/pages/Plants"));
+const Privacy = lazy(() => import("@/pages/legal/Privacy"));
+const Terms = lazy(() => import("@/pages/legal/Terms"));
+const NotFound = lazy(() => import("@/pages/NotFound"));
 
 export const routes = [
   {
-    path: '/',
-    element: Home
+    path: "/",
+    element: Home,
   },
   {
-    path: '/about',
-    element: About
+    path: "/about",
+    element: About,
   },
   {
-    path: '/signin',
-    element: SignIn
+    path: "/signin",
+    element: SignIn,
   },
   {
-    path: '/signup',
-    element: SignUp
+    path: "/signup",
+    element: SignUp,
   },
   {
-    path: '/more',
-    element: More
+    path: "/more",
+    element: More,
   },
   {
-    path: '/plants',
-    element: Plants
+    path: "/plants",
+    element: Plants,
   },
   {
-    path: '/privacy',
-    element: Privacy
+    path: "/privacy",
+    element: Privacy,
   },
   {
-    path: '/terms',
-    element: Terms
+    path: "/terms",
+    element: Terms,
   },
   {
-    path: '*',
-    element: NotFound
-  }
-]
+    path: "*",
+    element: NotFound,
+  },
+];
 
-export default routes 
+export default routes;

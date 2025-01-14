@@ -6,7 +6,7 @@ function Plants() {
         {/* Add plant listing content here */}
       </div>
     </div>
-  )
+  );
 }
 
-export default Plants 
+export default Plants;

@@ -1,16 +1,21 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { FaEnvelope } from 'react-icons/fa'
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { FaEnvelope } from "react-icons/fa";
 
 function ForgotPassword() {
-  const [email, setEmail] = useState('')
+  const [email, setEmail] = useState("");
   // const [isLoading, setIsLoading] = useState(false)
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4" data-aos="fade-up">
+    <div
+      className="min-h-screen flex items-center justify-center px-4"
+      data-aos="fade-up"
+    >
       <div className="max-w-md w-full space-y-8 glass p-8 rounded-[2rem]">
         <div>
-          <h2 className="text-3xl font-bold text-center text-white">Reset Password</h2>
+          <h2 className="text-3xl font-bold text-center text-white">
+            Reset Password
+          </h2>
           <p className="mt-2 text-center text-gray-400">
             Enter your email to receive reset instructions
           </p>
@@ -45,7 +50,7 @@ function ForgotPassword() {
         </form>
       </div>
     </div>
-  )
+  );
 }
 
-export default ForgotPassword 
+export default ForgotPassword;

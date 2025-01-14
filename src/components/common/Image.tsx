@@ -1,35 +1,35 @@
-import { useState, memo } from 'react'
-import { imageLoader } from '@/utils/image'
+import { useState, memo } from "react";
+import { imageLoader } from "@/utils/image";
 
 interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-  src: string
-  alt: string
-  className?: string
-  width?: number
-  height?: number
+  src: string;
+  alt: string;
+  className?: string;
+  width?: number;
+  height?: number;
 }
 
-export const Image = memo(function Image({ 
-  src, 
-  alt, 
-  className = '', 
+export const Image = memo(function Image({
+  src,
+  alt,
+  className = "",
   width,
   height,
-  ...props 
+  ...props
 }: ImageProps) {
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState(false)
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   const handleLoad = () => {
-    setIsLoading(false)
-  }
+    setIsLoading(false);
+  };
 
   const handleError = () => {
-    setError(true)
-    setIsLoading(false)
-  }
+    setError(true);
+    setIsLoading(false);
+  };
 
-  if (error) return null
+  if (error) return null;
 
   return (
     <div className={`relative overflow-hidden ${className}`}>
@@ -43,7 +43,7 @@ export const Image = memo(function Image({
         onLoad={handleLoad}
         onError={handleError}
         className={`transition-opacity duration-300 ${
-          isLoading ? 'opacity-0' : 'opacity-100'
+          isLoading ? "opacity-0" : "opacity-100"
         }`}
         {...props}
       />
@@ -51,5 +51,5 @@ export const Image = memo(function Image({
         <div className="absolute inset-0 bg-black/10 animate-pulse" />
       )}
     </div>
-  )
-}) 
+  );
+});
