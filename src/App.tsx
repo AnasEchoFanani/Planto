@@ -28,6 +28,7 @@ function AppRoutes() {
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const handleLoad = () => {
@@ -46,10 +47,16 @@ function App() {
     return () => window.removeEventListener('beforeunload', handleLoad);
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <BrowserRouter>
       <CartProvider>
-        <CursorFollower />
+        {width > 768 && <CursorFollower />}
         {isLoading ? (
           <LoadingOverlay isLoading={true} />
         ) : (

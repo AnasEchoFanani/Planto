@@ -3,6 +3,7 @@ import { FaTimes, FaMinus, FaPlus } from "react-icons/fa";
 import { memo, useCallback, useMemo } from "react";
 import { Image } from "@/components";
 import { AnimatePresence, motion } from "framer-motion";
+import './CartSidebar.css';
 
 type CartItem = {
   id: number;
@@ -108,7 +109,7 @@ function CartSidebar() {
               stiffness: 300,
               damping: 30
             }}
-            className="fixed top-0 right-0 h-full w-full max-w-md bg-black/90 backdrop-blur-xl z-50 p-6"
+            className="fixed top-0 right-0 h-full w-full max-w-md bg-black/90 backdrop-blur-xl z-50 p-6 cart-sidebar"
           >
             <div className="flex flex-col h-full">
               <motion.div 
