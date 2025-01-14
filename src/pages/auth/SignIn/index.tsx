@@ -26,7 +26,6 @@ function SignIn() {
   return (
     <div
       className="min-h-screen flex items-center justify-center px-4"
-      data-aos="fade-up"
     >
       <div className="max-w-md w-full space-y-8 glass p-8 rounded-[2rem]">
         <div>

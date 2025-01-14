@@ -34,7 +34,7 @@ export default defineConfig({
         manualChunks: {
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
           'ui-vendor': ['react-icons'],
-          'animation-vendor': ['aos']
+          'animation-vendor': []
         }
       }
     },
@@ -45,8 +45,7 @@ export default defineConfig({
       'react',
       'react-dom',
       'react-router-dom',
-      'react-icons',
-      'aos'
+      'react-icons'
     ]
   },
   server: {

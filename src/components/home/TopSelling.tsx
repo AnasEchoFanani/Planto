@@ -62,7 +62,6 @@ function TopSelling() {
           <div className="text-center mb-12">
             <h2
               className="text-3xl md:text-4xl font-bold mb-8 md:mb-16 text-center"
-              data-aos="fade-up"
             >
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300 via-green-200 to-green-300">
                 Most Loved Plants
@@ -70,8 +69,6 @@ function TopSelling() {
             </h2>
             <p
               className="text-center text-gray-400 max-w-2xl mx-auto mb-12"
-              data-aos="fade-up"
-              data-aos-delay="100"
             >
               Our customers' favorites, chosen for their beauty and ease of care.
               Each plant is hand-selected to bring natural elegance to your space
