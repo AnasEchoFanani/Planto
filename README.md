@@ -2,7 +2,11 @@
 
 A modern, responsive portfolio website built with React, TypeScript, and Vite.
 
-## 🚀 Features
+## License
+
+This project is licensed under the [View-Only License](LICENSE).
+
+## Features
 
 - Fast and responsive single-page application
 - Modern UI/UX with smooth animations
@@ -11,47 +15,30 @@ A modern, responsive portfolio website built with React, TypeScript, and Vite.
 - SEO optimized
 - Mobile-first design
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - React 18
 - TypeScript
 - Vite
 - ESLint
-- [Add any other major technologies you're using]
+- Prettier
+- Framer Motion
 
-## 🏃‍♂️ Getting Started
-
-1. Clone the repository
-```bash
-git clone [your-repo-url]
-```
-
-2. Install dependencies
-```bash
-npm install
-```
-
-3. Start the development server
-```bash
-npm run dev
-```
-
-4. Build for production
-```bash
-npm run build
-```
-
-## 📁 Project Structure
-
-```
-src/
-├── components/
-├── pages/
-├── assets/
-├── styles/
-└── utils/
-```
-
-## 🤝 Contributing
-
-While this is a personal portfolio project, suggestions and feedback are welcome! Feel free to open an issue or submit a pull request.
+## Project Structure
+- `public/` - public assets
+- `src/` - source code
+	+ `assets/` - static assets (e.g. images, fonts)
+	+ `components/` - reusable React components
+	+ `constants/` - static constants (e.g. colors, fonts)
+	+ `context/` - React Context API implementations
+	+ `hooks/` - reusable React hooks
+	+ `pages/` - top-level React components (e.g. homepage, about page)
+	+ `types/` - custom TypeScript types
+	+ `utils/` - utility functions
+	+ `App.tsx` - top-level React component
+	+ `main.tsx` - entrypoint for Vite
+    + `tsconfig.json` - TypeScript configuration file
+    + `vite.config.ts` - Vite configuration file
+    + `eslint.config.js` - ESLint configuration file
+    + `postcss.config.js` - PostCSS configuration file
+    
