@@ -4,7 +4,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Vite.
 
 ## License
 
-This project is licensed under the [View-Only License](LICENSE).
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 ## Features
 
@@ -41,4 +41,3 @@ This project is licensed under the [View-Only License](LICENSE).
     + `vite.config.ts` - Vite configuration file
     + `eslint.config.js` - ESLint configuration file
     + `postcss.config.js` - PostCSS configuration file
-    
