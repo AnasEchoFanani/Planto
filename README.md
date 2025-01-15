@@ -41,3 +41,30 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) for more 
     + `vite.config.ts` - Vite configuration file
     + `eslint.config.js` - ESLint configuration file
     + `postcss.config.js` - PostCSS configuration file
+
+## Get Started
+
+Follow these steps to get your development environment set up:
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/AnasEchoFanani/Planto.git
+   ```
+
+2. **Navigate into the project directory**
+   ```bash
+   cd Planto
+   ```
+
+3. **Install dependencies with Yarn**
+   ```bash
+   yarn
+   ```
+
+4. **Start the development server**
+   ```bash
+   yarn dev
+   ```
+
+5. **Open your browser and go to**
+   [http://localhost:5173](http://localhost:5173) to see the result.
