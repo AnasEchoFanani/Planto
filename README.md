@@ -56,15 +56,25 @@ Follow these steps to get your development environment set up:
    cd Planto
    ```
 
-3. **Install dependencies with Yarn**
-   ```bash
-   yarn
-   ```
+3. **Install dependencies**
+   - If you have Yarn installed, run:
+     ```bash
+     yarn
+     ```
+   - If you don't have Yarn, you can install it by following the instructions at [Yarn Installation Guide](https://classic.yarnpkg.com/en/docs/install). Alternatively, you can use npm:
+     ```bash
+     npm install
+     ```
 
 4. **Start the development server**
-   ```bash
-   yarn dev
-   ```
+   - If you used Yarn:
+     ```bash
+     yarn dev
+     ```
+   - If you used npm:
+     ```bash
+     npm run dev
+     ```
 
 5. **Open your browser and go to**
    [http://localhost:5173](http://localhost:5173) to see the result.
