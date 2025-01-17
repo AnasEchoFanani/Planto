@@ -100,7 +100,7 @@ function Footer() {
                   <FaLinkedin size={24} />
                 </a>
                 <a
-                  href="https://instagram.com/anasfanani"
+                  href="https://instagram.com/_echo_theonly"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-green-400 transition-colors"
